@@ -1,0 +1,18 @@
+version: 1
+jobs:
+  patata_name:
+    image: node
+    script:
+    - npm run i
+    - npm run start
+  fritata_name:
+    image: node
+    script:
+    - echo 123
+stages:
+  - peel_patata:
+      jobs:
+        - patata_name
+  - fry_fritata:
+      jobs:
+        - fritata_name
